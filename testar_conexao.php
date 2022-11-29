@@ -1,8 +1,8 @@
 <html>
 <?php
-        echo 'Versão Atual do PHP: ' . phpversion();
+        echo 'Versão Atual do PHP: '.phpversion();
 
-        $servername = "mysqlASW";
+        $servername = "db";
         $username = "root";
         $password = "root";
 

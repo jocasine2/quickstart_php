@@ -1,24 +1,23 @@
 version: '3'
 
 services:
-  apache:
+  app:
     build:
-      dockerfile: php7-apache2-dockerfile
+      dockerfile: ./docker/Dockerfile
       context: .
-    image: seu-usuario/php7-apache2-dockerfile
-    container_name: php7-apache2
+    container_name: app
     restart: always
     ports:
       - '80:80'
     volumes:
-      - ./html:/var/www/html
+      - .:/var/www/html
     depends_on:
-      - mysqldb
+      - db
     links:
-      - mysqldb
+      - db
 
-  mysqldb:
-    container_name: mysqlASW
+  db:
+    container_name: db
     image: mysql:5.7
     restart: always
     ports:
